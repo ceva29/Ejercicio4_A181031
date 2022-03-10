@@ -1,0 +1,150 @@
+<?xml version="1.0" encoding="utf-8"?>
+<wsdl:definitions xmlns:soap12="http://schemas.xmlsoap.org/wsdl/soap12/" xmlns:s="http://www.w3.org/2001/XMLSchema" xmlns:tm="http://microsoft.com/wsdl/mime/textMatching/" xmlns:soapenc="http://schemas.xmlsoap.org/soap/encoding/" xmlns:http="http://schemas.xmlsoap.org/wsdl/http/" xmlns:tns="http://tempuri.org/" xmlns:mime="http://schemas.xmlsoap.org/wsdl/mime/" xmlns:soap="http://schemas.xmlsoap.org/wsdl/soap/" targetNamespace="http://tempuri.org/" xmlns:wsdl="http://schemas.xmlsoap.org/wsdl/">
+  <wsdl:types>
+    <s:schema elementFormDefault="qualified" targetNamespace="http://tempuri.org/">
+      <s:element name="areacuadrado">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="1" maxOccurs="1" name="n1" type="s:decimal" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="areacuadradoResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="1" maxOccurs="1" name="areacuadradoResult" type="s:decimal" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="areatriangulo">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="1" maxOccurs="1" name="n1" type="s:decimal" />
+            <s:element minOccurs="1" maxOccurs="1" name="n2" type="s:decimal" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="areatrianguloResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="1" maxOccurs="1" name="areatrianguloResult" type="s:decimal" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="areacirculo">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="1" maxOccurs="1" name="n1" type="s:decimal" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="areacirculoResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="1" maxOccurs="1" name="areacirculoResult" type="s:decimal" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+    </s:schema>
+  </wsdl:types>
+  <wsdl:message name="areacuadradoSoapIn">
+    <wsdl:part name="parameters" element="tns:areacuadrado" />
+  </wsdl:message>
+  <wsdl:message name="areacuadradoSoapOut">
+    <wsdl:part name="parameters" element="tns:areacuadradoResponse" />
+  </wsdl:message>
+  <wsdl:message name="areatrianguloSoapIn">
+    <wsdl:part name="parameters" element="tns:areatriangulo" />
+  </wsdl:message>
+  <wsdl:message name="areatrianguloSoapOut">
+    <wsdl:part name="parameters" element="tns:areatrianguloResponse" />
+  </wsdl:message>
+  <wsdl:message name="areacirculoSoapIn">
+    <wsdl:part name="parameters" element="tns:areacirculo" />
+  </wsdl:message>
+  <wsdl:message name="areacirculoSoapOut">
+    <wsdl:part name="parameters" element="tns:areacirculoResponse" />
+  </wsdl:message>
+  <wsdl:portType name="WebService1Soap">
+    <wsdl:operation name="areacuadrado">
+      <wsdl:input message="tns:areacuadradoSoapIn" />
+      <wsdl:output message="tns:areacuadradoSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="areatriangulo">
+      <wsdl:input message="tns:areatrianguloSoapIn" />
+      <wsdl:output message="tns:areatrianguloSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="areacirculo">
+      <wsdl:input message="tns:areacirculoSoapIn" />
+      <wsdl:output message="tns:areacirculoSoapOut" />
+    </wsdl:operation>
+  </wsdl:portType>
+  <wsdl:binding name="WebService1Soap" type="tns:WebService1Soap">
+    <soap:binding transport="http://schemas.xmlsoap.org/soap/http" />
+    <wsdl:operation name="areacuadrado">
+      <soap:operation soapAction="http://tempuri.org/areacuadrado" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="areatriangulo">
+      <soap:operation soapAction="http://tempuri.org/areatriangulo" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="areacirculo">
+      <soap:operation soapAction="http://tempuri.org/areacirculo" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+  </wsdl:binding>
+  <wsdl:binding name="WebService1Soap12" type="tns:WebService1Soap">
+    <soap12:binding transport="http://schemas.xmlsoap.org/soap/http" />
+    <wsdl:operation name="areacuadrado">
+      <soap12:operation soapAction="http://tempuri.org/areacuadrado" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="areatriangulo">
+      <soap12:operation soapAction="http://tempuri.org/areatriangulo" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="areacirculo">
+      <soap12:operation soapAction="http://tempuri.org/areacirculo" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+  </wsdl:binding>
+  <wsdl:service name="WebService1">
+    <wsdl:port name="WebService1Soap" binding="tns:WebService1Soap">
+      <soap:address location="https://localhost:44340/WebService1.asmx" />
+    </wsdl:port>
+    <wsdl:port name="WebService1Soap12" binding="tns:WebService1Soap12">
+      <soap12:address location="https://localhost:44340/WebService1.asmx" />
+    </wsdl:port>
+  </wsdl:service>
+</wsdl:definitions>
